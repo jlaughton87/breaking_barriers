@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+
+{{ theme:partial src="site/_meta" }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{{# Hide from search engines whilst in dev mode. #}}
+{{ if hide_site }}
+<meta name="robots" content="noindex">
+{{ endif }}
+
+{{ if permalink }}
+<link rel="canonical" href="{{ permalink }}">
+{{ endif }}
+
+{{# Place favicon.ico and apple-touch-icon.png in the root directory. #}}
+
+<link rel="stylesheet" href="{{ theme:css src="base" }}">
+<link rel="stylesheet" href="{{ theme:css src="vendor" }}">
+<link rel="stylesheet" href="{{ theme:css }}">
+
+<!-- analytics -->
+{{ theme:partial src="site/_analytics" }}
+
+</head>

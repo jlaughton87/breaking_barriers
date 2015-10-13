@@ -1,0 +1,226 @@
+<div class="pi-section-w pi-section-base pi-section-parallax piCounter piTabs" style="background-image: url({{ transform src="{{ tagline_background }}"}});">
+	<div class="pi-texture" style="background: rgba(24, 28, 32, 0.8);"></div>
+	<div class="pi-section pi-padding-top-120 pi-padding-bottom-100 pi-text-center">
+		
+		<h2 class="h1 pi-text-shadow pi-padding-top-bottom-70">
+			{{tagline}}
+		</h2>
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-white">
+	<div class="pi-section">
+		
+		<div class="pi-row">
+			{{values}}
+			<div class="pi-col-sm-4">
+				
+				<h2 class="h4 pi-weight-700 pi-uppercase pi-letter-spacing pi-has-bg pi-margin-bottom-20">
+					{{value_title}}
+				</h2>
+				
+				<p>
+					{{value_body}}
+				</p>
+				
+				
+				
+			</div>
+			{{/values}}
+		</div>
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-parallax" style="background-image: url({{ transform src="{{ skills_background }}"}});">
+
+	<div class="pi-section pi-padding-top-80 pi-padding-bottom-40">
+		
+		<h2 class="h4 pi-uppercase pi-weight-700 pi-letter-spacing pi-text-center">
+			{{skills_title}}
+		</h2>
+		
+		<hr class="pi-divider-gap-80">
+		
+		<!-- Row -->
+		<div class="pi-row pi-grid-big-margins pi-text-center">
+			{{skills}}
+			<!-- Col 3 -->
+			<div class="pi-col-xs-6 pi-col-sm-3 pi-padding-bottom-40">
+				
+				<div class="pi-img-w pi-margin-bottom-30">
+					<img src="{{skill_icon}}" style="width: 100px;" class="pi-img-center" alt="" />
+				</div>
+				
+				<h5 class="pi-uppercase pi-weight-700 pi-letter-spacing pi-text-base">{{skill_title}}</h5>
+
+			
+				<p>{{skill_body}}</p>
+				
+			</div>
+			<!-- End col 3 -->
+			{{/skills}}
+			
+		</div>
+		<!-- End row -->
+		
+	</div>
+</div>
+<!-- End promo -->
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-shadow-inside-top pi-section-base pi-slider-enabled">
+	<div class="pi-texture" style="background: url(/_themes/breaking_barriers/img/hexagon.png) repeat;"></div>
+	<div class="pi-section pi-padding-top-120 pi-padding-bottom-60">
+		
+		<!-- Slider -->
+		<div class="pi-slider-wrapper pi-slider-arrows-inside pi-slider-show-pagination-hover pi-slider-show-arrow-hover pi-text-center">
+			<div class="pi-slider pi-slider-animate-opacity">
+				{{ get_content from="about/testimonials" }}
+				<!-- Slide -->
+				<div class="pi-slide">	
+					<p class="lead-34 pi-margin-bottom-20 pi-text-white">
+						<i class="icon-quote pi-quote-left pi-text-opacity"></i>{{snippet}}<i class="icon-quote pi-quote-right pi-text-opacity"></i>
+					</p>
+					<p class="pi-weight-700 pi-uppercase pi-letter-spacing pi-margin-bottom-5 pi-text-base-dark">
+						{{name}}
+					</p>
+					<p class="pi-italic">
+						{{comany}}
+					</p>
+				</div>
+				{{ /get_content }}
+				<!-- End slide -->
+				
+			</div>
+		</div>
+		<!-- End slider -->
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-white">
+		
+		<!-- Team -->
+		<div class="pi-row pi-liquid-col-sm-4 pi-gallery pi-stacked pi-no-margin-bottom pi-column-fix">
+			
+			<!-- Team item -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-img-grayscale-hover-70">
+					<img src="/_themes/breaking_barriers/img/img_external/team/leader-11.jpg" alt="">
+					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
+						<div class="pi-caption-bottom">
+							<div>
+								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Mike Ross</a></h5>
+								<p class="pi-italic pi-text-shadow">
+									Co-Founder, Art Director
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End team item -->
+			
+			<!-- Team item -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-img-grayscale-hover-70">
+					<img src="/_themes/breaking_barriers/img/img_external/team/leader-22.jpg" alt="">
+					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
+						<div class="pi-caption-bottom">
+							<div>
+								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Mattias Nuffer</a></h5>
+								<p class="pi-italic pi-text-shadow">
+									Co-Founder, Web Developer
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End team item -->
+			
+			<!-- Team item -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-img-grayscale-hover-70">
+					<img src="/_themes/breaking_barriers/img/img_external/team/leader-33.jpg" alt="">
+					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
+						<div class="pi-caption-bottom">
+							<div>
+								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Kindra Hall</a></h5>
+								<p class="pi-italic pi-text-shadow">
+									Web & Graphic Designer
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End team item -->
+			
+			<!-- Team item -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-img-grayscale-hover-70">
+					<img src="/_themes/breaking_barriers/img/img_external/team/leader-44.jpg" alt="">
+					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
+						<div class="pi-caption-bottom">
+							<div>
+								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Mike Ross</a></h5>
+								<p class="pi-italic pi-text-shadow">
+									Co-Founder, Art Director
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End team item -->
+		</div>
+		<!-- End team -->
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+<div class="pi-section-w pi-shadow-inside-top pi-section-base">
+	<div class="pi-texture" style="background: url(/_themes/breaking_barriers/img/hexagon.png) repeat;"></div>
+	<div class="pi-section pi-padding-top-110 pi-padding-bottom-90 pi-text-center">
+
+		<h3 class="pi-uppercase pi-letter-spacing pi-weight-700 pi-text-shadow pi-margin-bottom-20">
+			Ullam Corporis Suscipit
+		</h3>
+		
+		<p class="lead-16 pi-margin-bottom-30">
+			Nemo enim ipsam voluptatem quia voluptas sit aspernatur <br>aut odit aut fugit, sed quia consequuntur
+		</p>
+		
+		<p>			
+			<a href="#" class="btn pi-btn-base-2 pi-btn-big">
+				Get a Free Quote
+			</a>
+		</p>
+		
+		<p class="lead-22">			
+			or give us call
+			<span class="pi-weight-700 pi-text-white">+988-344-5599</span>
+		</p>
+
+	</div>
+</div>

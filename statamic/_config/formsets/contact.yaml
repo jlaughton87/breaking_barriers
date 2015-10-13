@@ -1,0 +1,54 @@
+###########################################################################################
+#
+#  CONTACT RAVEN FORMSET
+#
+#  Formsets can override any default settings (raven.yaml) EXCEPT master_killswitch
+#
+###########################################################################################
+
+# Location (from root) to save form submissions
+submission_save_path: _forms/
+
+# Fields allowed to be submitted in the form, automatically
+# purging anything and everything else
+allowed:
+  - name
+  - email
+  - message
+  - raven_address
+
+# You are not required to require fields, but once you do, any missing
+# from the POST will squash this submission and send a list of
+# missing fields to your {{ raven:errors }} tagpair
+required:
+  - name
+  - email
+  - message
+
+# Apply validation rules to specific fields. Refer to documentation
+# for a full list of available rules and their format
+validate:
+  name: alpha
+  email: email
+  
+honeypot: raven_address
+
+messages:
+  name: "Your name must be made of letters only."
+  email: "Your email address must be a valid one."
+
+# Configure notification email
+email:
+  to: gareth@example.com
+  from: "{{ email }}"
+  subject: "Message From {{ name }}"
+  automagic: false
+  html_template: emails/contact_html
+  text_template: emails/contact_text
+
+control_panel:
+  exclude: false
+  fields:
+    - name
+    - email
+    - message

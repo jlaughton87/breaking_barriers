@@ -1,0 +1,77 @@
+title: Standard Page
+include: meta                  # include the meta fields
+
+fields:
+  title:
+    instructions: "Enter the main page title here."
+
+  main_section:
+    type: section
+    display: Header
+
+  _template:
+    type: hidden
+    default: page
+  content:
+    hide: true
+  tagline_background:
+    display: Header Image
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: img/icons   # make sure your folder is writable
+  tagline:
+    display: Tagline
+    type: text
+    instructions:
+      below: "Add the about page tagline here."
+
+  values_section:
+    type: section
+    display: Values Section
+  values:
+    display: "Enter your 3 main values here."
+    type: grid
+    starting_rows: 3
+    min_rows: 3
+    max_rows: 3
+    fields:
+      value_title:
+        display: Value title
+        type: text
+        width: 25%
+      value_body:
+        display: Value body copy
+        type: textarea
+        width: 75%
+
+
+  skills_section:
+    type: section
+    display: Skills Section
+  skills_background:
+    display: Skills Section Background
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: img/icons   # make sure your folder is writable
+  skills:
+    display: "Enter your 4 main skills here."
+    type: grid
+    starting_rows: 4
+    min_rows: 4
+    max_rows: 4
+    fields:
+      skill_icon:
+        display: Header Image
+        type: file
+        allowed: [png, gif, jpg, jpeg]
+        destination: img/icons   # make sure your folder is writable
+        width: 25%
+      skill_title:
+        display: Skill title
+        type: text
+        width: 25%
+      skill_body:
+        display: Skill body copy
+        type: textarea
+        width: 50%
+# This is the standard page fieldset it pulls in the meta fields and sets the template to always use the page template.
