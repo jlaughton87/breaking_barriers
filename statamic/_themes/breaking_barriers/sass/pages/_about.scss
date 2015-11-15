@@ -1,0 +1,22 @@
+//======================================
+// About
+//======================================
+
+
+.about {
+  //team
+  .pi-caption-bottom {
+    left: 0;
+  }
+  .twoMembers {
+    width: 50%;
+    position: relative;
+    margin: auto;
+    height: 100%;
+    &:after {
+      content:"";
+      display:table;
+      clear:both;
+    }
+  }
+}

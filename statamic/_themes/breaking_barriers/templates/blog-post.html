@@ -1,0 +1,245 @@
+<!-- Title bar -->
+<div class="pi-section-w pi-section-base pi-section-base-gradient">
+	<div class="pi-texture" style="background: url(/_themes/breaking_barriers/img/hexagon.png) repeat;"></div>
+	<div class="pi-section" style="padding: 30px 40px 26px;">
+	
+		<div class="pi-row">
+			<div class="pi-col-sm-4 pi-center-text-xs">
+				<h1 class="h2 pi-weight-300 pi-margin-bottom-5">{{title}}</h1>
+			</div>
+			<div class="pi-col-sm-8 pi-text-right pi-center-text-xs">
+				<p class="lead-20 pi-weight-300 pi-margin-top-5 pi-margin-bottom-5">{{summary}}</p>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!-- End title bar -->
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+{{ theme:partial src="site/_breadcrumbs" }}
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-white pi-slider-enabled piTooltips piSocials">
+	<div class="pi-section pi-padding-bottom-10">
+		
+		<div class="pi-row">
+		
+			<div class="pi-col-sm-9 pi-padding-bottom-40">
+				
+				<!-- Slider -->
+				<div class="pi-slider-wrapper pi-slider-arrows-inside pi-slider-show-arrow-hover pi-margin-bottom-40">
+					<div class="pi-slider pi-slider-animate-opacity">
+						{{slideshow}}
+						<!-- Slide -->
+						<div class="pi-slide">
+							<div class="pi-img-w pi-img-round-corners pi-img-shadow pi-img-with-overlay">
+
+								<a href="{{image}}" class="pi-colorbox"><img src="{{image}}" alt=""/></a>
+
+							</div>
+						</div>
+						<!-- End slide -->
+						{{/slideshow}}
+
+					</div>
+				</div>
+				<!-- End slider -->
+				
+				<h2 class="pi-weight-600">
+					{{content_main_title}}
+				</h2>
+				
+				<ul class="pi-meta">
+					<li><i class="icon-user"></i>by {{ author|title tagsli>
+					<li><i class="icon-clock"></i>{{date}}</li>
+				</ul>
+				
+				<!-- <p class="lead-20">
+					{{content_main_title}}
+				</p> -->
+				{{ if letter}}
+				<p>
+					<span class="pi-dropcap">{{letter}}</span>{{content}}
+				</p>
+				{{ endif }}
+				{{extra_content_section}}
+				{{ if type == "text_content" }}
+					{{ content_text }}
+				{{ elseif type == "sub_title" }}
+					<h4 class="pi-weight-700 pi-uppercase pi-letter-spacing">
+						{{sub_title}}
+					</h4>
+				{{ elseif type == "single_image" }}
+					<div class="pi-img-w pi-img-round-corners pi-img-shadow pi-img-center" style="width: 340px;">
+						<a href="{{content_image}}" class="pi-colorbox">
+							<img src="{{ transform src="{{content_image}}" width="750" }}" alt="">
+							<div class="pi-img-overlay pi-no-padding pi-img-overlay-darker">
+								<div class="pi-caption-centered">
+									<div>
+										<span class="pi-caption-icon pi-caption-scale icon-search"></span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				{{ elseif type == "paragraph_and_image" }}
+					{{ if image_position == "right"}}
+					<div class="pi-img-w pi-img-round-corners pi-img-shadow pi-img-right" style="width: 240px;">
+						<a href="{{content_image}}" class="pi-colorbox">
+							<img src="{{ transform src="{{content_image}}" width="750" }}" alt="">
+							<div class="pi-img-overlay pi-no-padding pi-img-overlay-darker">
+								<div class="pi-caption-centered">
+									<div>
+										<span class="pi-caption-icon pi-caption-scale icon-search"></span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					{{endif}}
+					{{ if image_position == "left"}}
+					<div class="pi-img-w pi-img-round-corners pi-img-shadow pi-img-left" style="width: 240px;">
+						<a href="{{content_image}}" class="pi-colorbox">
+							<img src="{{ transform src="{{content_image}}" width="750" }}" alt="">
+							<div class="pi-img-overlay pi-no-padding pi-img-overlay-darker">
+								<div class="pi-caption-centered">
+									<div>
+										<span class="pi-caption-icon pi-caption-scale icon-search"></span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					{{endif}}
+					{{content_text}}
+					
+				{{ elseif type == "separator" }}
+					<hr class="pi-divider pi-divider-dashed pi-divider-big">
+				{{ endif }}
+				{{/extra_content_section}}
+				
+				
+				
+				
+				<!-- Box -->				
+				<div class="pi-box pi-box-slave pi-box-small pi-border pi-round pi-margin-bottom-40">
+					
+					<div class="pi-row">
+						
+						<div class="pi-col-sm-4 pi-center-text-xs">
+							<h6 class="pi-uppercase pi-weight-700" style="margin-top: 2px;">
+								Share This Post:
+							</h6>
+						</div>
+						
+						<div class="pi-col-sm-8 pi-text-right pi-center-text-xs">
+							<ul class="pi-social-icons pi-colored-bg pi-small pi-active-bg pi-jump pi-jump-bg pi-round pi-clearfix">
+								<li><a href="#" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
+								<li><a href="#" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
+								<li><a href="#" class="pi-social-icon-weibo"><i class="icon-weibo"></i></a></li>
+								<li><a href="#" class="pi-social-icon-pinterest"><i class="icon-pinterest"></i></a></li>
+								<li><a href="#" class="pi-social-icon-gplus"><i class="icon-gplus"></i></a></li>
+								<li><a href="#" class="pi-social-icon-tumblr"><i class="icon-tumblr"></i></a></li>
+								<li><a href="#" class="pi-social-icon-linkedin"><i class="icon-linkedin"></i></a></li>
+							</ul>
+						</div>
+						
+					</div>
+					
+				</div>
+				<!-- End box -->
+
+				
+				<hr class="pi-divider pi-divider-dashed pi-divider-big">
+				
+				<h4 class="pi-has-bg pi-weight-700 pi-uppercase pi-letter-spacing pi-margin-bottom-25">
+					Related Posts
+				</h4>
+				
+				<!-- Row -->
+				<div class="pi-row">
+					{{related}}
+					{{ get_content from="{ name }" show_hidden="true"}}
+		              <!-- Col 4 -->
+						<div class="pi-col-xs-4">
+							
+							<!-- Post item -->
+							<div class="pi-img-w pi-img-round-corners pi-img-shadow">
+								<a href="{{value}}">
+								<img src="{{ transform src="{{thumbnail}}" width="500" }}" alt="">
+								<span class="pi-img-overlay pi-img-overlay-white">
+								</span>
+								</a>
+							</div>
+							
+							<h2 class="h5 pi-margin-bottom-5">
+								<a href="{{value}}" class="pi-link-dark">{{title}}</a>
+							</h2>
+							<ul class="pi-meta pi-margin-bottom-10">
+								<li><i class="icon-clock"></i>{{date}}</li>
+							</ul>
+							<p>
+							{{letter}}{{content|truncate:100|striptags}}<a href="{{value}}" class="pi-italic"> Read more</a>
+						</p>
+							<!-- End post item -->
+							
+						</div>
+						<!-- End col 4 -->
+		          	{{ /get_content }}
+					
+					
+
+					{{/related}}
+					
+					
+				</div>
+				<!-- End row -->
+			</div>
+		
+			<div class="pi-sidebar pi-col-sm-3">
+	
+				
+				<!-- Tags -->
+				<div class="pi-sidebar-block pi-padding-bottom-40">
+					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-15">
+						Tags
+					</h3>
+					<p class="pi-margin-bottom-40">
+					{{tags}}
+						<a href="" style="margin-bottom: 10px;"class="btn pi-btn pi-btn-base pi-btn-small">{{name}}</a>
+
+					{{/tags}}
+
+				</p>
+				</div>
+				<!-- End Tags -->
+				
+				<!-- Tweets -->
+				<div class="pi-sidebar-block pi-padding-bottom-40">
+					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
+						Latest Tweets
+					</h3>
+					<ul class="pi-list-with-icons pi-list-icons-twitter pi-list-big-margins">
+						<li><a href="#">@envato</a>: Neque porro quisquam est, qui dolorem ipsum quia <a href="#" class="pi-link-dark">goo.gl/5GlsEZ</a> dolor sit amet 
+						<br> <span class="pi-italic pi-small-text pi-text-silver">14 hours ago</span></li>
+						<li><a href="#">@themeforest</a>:Ut enim ad minima veniam, quis nostrum <a href="#" class="pi-link-dark">goo.gl/6QKhAB</a> exercitationem ullam corporis
+						<br> <span class="pi-italic pi-small-text pi-text-silver">19 hours ago</span></li>
+					</ul>
+				</div>
+				<!-- End tweets -->
+				
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>

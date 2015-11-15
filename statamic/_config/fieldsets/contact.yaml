@@ -1,0 +1,90 @@
+title: Standard Page
+include:
+  - meta
+
+fields:
+  title:
+    instructions: "Enter the main page title here."
+
+  main_section:
+    type: section
+    display: Header
+  tagline:
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    max_rows: 1
+    fields:
+      start:
+        display: First half
+        type: text
+        width: 50%
+      featured:
+        display: Coloured second half
+        type: text
+        width: 50%
+  subTitle:
+    type: text
+    instructions: Add sub header here
+  tagline_background:
+    display: Header Image (if applicable)
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: img   # make sure your folder is writable
+  content:
+    hide: true
+  contact_info:
+    type: section
+    display: Contact info
+  address:
+    display: "Enter address here"
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    max_rows: 1
+    fields:
+      first_line:
+        type: text
+        width: 33%
+      second_line:
+        type: text
+        width: 33%
+      postcode:
+        type: text
+        width: 33%
+  emails:
+    display: "Add new row for each email address"
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    fields:
+      name:
+        type: text
+        width: 50%
+      email_address:
+        type: text
+        width: 50%
+  numbers:
+    display: "Add new row for each email phone number"
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    fields:
+      name:
+        type: text
+        width: 50%
+      number:
+        type: text
+        width: 50%
+  li:
+    display: Linkd In
+    type: text
+    width: 33%
+  tw:
+    display: Twitter
+    type: text
+    width: 33%
+  fb:
+    display: Facebook
+    type: text
+    width: 33%

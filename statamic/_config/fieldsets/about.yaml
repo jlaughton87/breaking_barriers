@@ -1,30 +1,19 @@
 title: Standard Page
-include: meta                  # include the meta fields
+include:
+  - meta
+  - header
 
 fields:
-  title:
-    instructions: "Enter the main page title here."
-
-  main_section:
-    type: section
-    display: Header
-
-  _template:
-    type: hidden
-    default: page
-  content:
-    hide: true
   tagline_background:
-    display: Header Image
+    display: Header Image (if applicable)
     type: file
     allowed: [png, gif, jpg, jpeg]
-    destination: img/icons   # make sure your folder is writable
-  tagline:
-    display: Tagline
-    type: text
-    instructions:
-      below: "Add the about page tagline here."
-
+    destination: img   # make sure your folder is writable
+  content_section:
+    type: section
+    display: Main body Copy
+  content:
+    type: redactor
   values_section:
     type: section
     display: Values Section

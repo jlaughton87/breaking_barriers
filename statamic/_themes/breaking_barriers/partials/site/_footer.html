@@ -1,4 +1,5 @@
 <!-- Footer -->
+{{get_content from="contact_us"}}
 <!-- Widget area -->
 <div class="pi-section-w pi-border-bottom pi-border-top-light pi-section-dark">
 	<div class="pi-section pi-padding-bottom-10">
@@ -23,7 +24,7 @@
 			<div class="pi-clearfix pi-hidden-lg-only pi-hidden-md-only"></div>
 
 			<!-- Col 4 -->
-			<div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30" style="background-image: url('/_themes/breaking_barriers/img/map-base.png'); background-position: 50% 55px; background-repeat: no-repeat;">
+			<div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30" >
 
 				<h6 class="pi-margin-bottom-25 pi-weight-700 pi-uppercase pi-letter-spacing">
 					Contact Us
@@ -32,26 +33,24 @@
 				<!-- Contact info -->
 				<ul class="pi-list-with-icons pi-list-big-margins">
 
-					<li>
-						<span class="pi-bullet-icon"><i class="icon-location"></i></span>
-						<strong>Address:</strong> 557 Cyan Avenue, Suite 65, <br>New York, CA 9008
-					</li>
+					{{address}}
+		          <li><span class="pi-bullet-icon"><i class="icon-location"></i></span><strong>Address: </strong>{{first_line}}<br>{{second_line}}, {{postcode}}<br>
+		          {{/address}}
+					<li><span class="pi-bullet-icon"><i class="icon-phone"></i></span>
+					<strong>Phone:</strong>
+			          {{numbers}}
+			            {{number}}{{if !last }},{{endif}}
+			            <br>
+			          {{/numbers}}
+			          </li>
 
-					<li>
-						<span class="pi-bullet-icon"><i class="icon-phone"></i></span>
-						<strong>Phone:</strong> (123) 456-7890
-					</li>
-
-					<li>
-						<span class="pi-bullet-icon"><i class="icon-mail"></i></span>
-						<strong>Email:</strong> <a href="mailto:hello@pitheme.com">hello@pitheme.com</a>
-					</li>
-
-					<li>
-						<span class="pi-bullet-icon"><i class="icon-clock"></i></span>
-						Monday - Friday: <strong>9:00 am - 10:00 pm</strong>
-						<br>
-						Saturday - Sunday: <strong>Closed</strong>
+					<li><span class="pi-bullet-icon"><i class="icon-mail"></i></span>
+						<strong>Email: </strong> 
+						{{emails limit="1"}}
+						 <a href="mailto: {{email_address}}">{{email_address}}</a>
+				      
+				          {{/emails}}
+						
 					</li>
 
 				</ul>
@@ -121,12 +120,9 @@
 		<!-- Social icons -->
 		<div class="pi-row-block pi-pull-right pi-hidden-2xs">
 			<ul class="pi-social-icons-simple pi-small clearFix">
-				<li><a href="#" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
-				<li><a href="#" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
-				<li><a href="#" class="pi-social-icon-dribbble"><i class="icon-dribbble"></i></a></li>
-				<li><a href="#" class="pi-social-icon-tumblr"><i class="icon-tumblr"></i></a></li>
-				<li><a href="#" class="pi-social-icon-vimeo"><i class="icon-vimeo"></i></a></li>
-				<li><a href="#" class="pi-social-icon-rss"><i class="icon-rss"></i></a></li>
+				{{if li}}<li><a target="_blank" href="{{li}}" class="pi-social-icon-linkedin"><i class="icon-linkedin"></i></a></li>{{endif}}
+          {{if fb}}<li><a target="_blank" href="{{fb}}" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>{{endif}}
+          {{if tw}}<li><a target="_blank" href="{{tw}}" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>{{endif}}
 			</ul>
 		</div>
 		<!-- End social icons -->
@@ -145,3 +141,4 @@
 </div>
 <!-- End copyright area -->
 <!-- End footer -->
+{{/get_content}}

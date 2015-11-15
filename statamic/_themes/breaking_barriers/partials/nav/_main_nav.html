@@ -4,13 +4,16 @@
       <!-- Menu -->
       <div class="pi-row-block">
         <ul class="pi-menu pi-has-hover-border pi-items-have-borders pi-full-height pi-hidden-xs">
-             {{ nav from="/" max_depth="2" exclude="site-map|feed|sitemap"}}
-                <li class="{{ if is_parent }}pi-has-dropdown{{ endif }}{{ if is_current }}active{{ endif }}">
+              <li class="{{ if is_parent }}pi-has-dropdown{{ endif }}{{ if is_current }}active{{ endif }}">
+                   <a href="/" ><span>Home</span></a>
+                </li>
+             {{ nav from="/" max_depth="2" exclude="icons|site-map|feed|sitemap"}}
+                <li class="{{ if is_parent }}pi-has-dropdown{{ endif }}{{ if is_current || is_parent }} active{{ endif }}">
                    <a href="{{ url }}" ><span>{{ title|smartypants|widont }}</span></a>
                    {{ if children || is_parent }}
                     <ul class="pi-submenu pi-has-border pi-items-have-borders pi-has-shadow pi-submenu-dark">
                     {{ children }}
-                      <li><a href="{{url}}">{{ title|smartypants|widont }}</a></li>
+                      <li {{ if is_current}}class="active"{{ endif }}><a href="{{url}}">{{ title|smartypants|widont }}</a></li>
                     {{ /children }}
                     </ul>
                   {{ endif }}
@@ -22,11 +25,13 @@
       
       <!-- Social icons -->
       <div class="pi-row-block pi-pull-right pi-hidden-sm">
+      {{get_content from="contact_us"}}
         <ul class="pi-social-icons pi-stacked pi-jump pi-full-height pi-bordered pi-small">
-          <li><a href="#" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
-          <li><a href="#" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
-          <li><a href="#" class="pi-social-icon-dribbble"><i class="icon-dribbble"></i></a></li>
+          <li><a href="{{li}}" target="_blank" class="pi-social-icon-linkedin"><i class="icon-linkedin"></i></a></li>
+          <li><a href="{{fb}}" target="_blank" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
+          <li><a href="{{tw}}" target="_blank" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
         </ul>
+      {{/get_content}}
       </div>
       <!-- End social icons -->
 
@@ -46,42 +51,20 @@
       <div id="pi-mobile-menu-7" class="pi-section-menu-mobile-w pi-section-dark">
         <div class="pi-section-menu-mobile">
 
-          <!-- Search form -->
-          <form class="form-inline pi-search-form-wide" role="form">
-            <div class="pi-input-with-icon">
-              <div class="pi-input-icon"><i class="icon-search-1"></i></div>
-              <input type="text" class="form-control pi-input-wide" placeholder="Search..">
-            </div>
-          </form>
-          <!-- End search form -->
-
           <ul class="pi-menu-mobile pi-menu-mobile-dark">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li>
-              <a href="portfolio-3-columns.html">Templates</a>
-              <ul>
-                <li>
-                  <a href="index.html">Homepage</a>
+            <li {{if segment_1 == "" || segment_1 == "home"}}class="active"{{endif}}><a href="/">Home</a></li>
+            {{ nav from="/" max_depth="2" exclude="icons|site-map|feed|sitemap"}}
+                <li class="{{ if is_current || is_parent }}active{{ endif }}">
+                   <a href="{{ url }}" ><span>{{ title|smartypants|widont }}</span></a>
+                   {{ if children || is_parent }}
+                    <ul class="pi-active" style="height: auto">
+                    {{ children }}
+                      <li {{ if is_current}}class="active"{{ endif }}><a href="{{url}}">{{ title|smartypants|widont }}</a></li>
+                    {{ /children }}
+                    </ul>
+                  {{ endif }}
                 </li>
-                <li>
-                  <a href="index.html">Portfolio</a>
-                </li>
-                <li>
-                  <a href="index.html">Blog</a>
-                </li>
-              </ul>
-            <li>
-              <a href="index.html">Elements</a>
-            </li>
-            <li>
-              <a href="#/header/header-logos">Header</a>
-            </li>
-            <li>
-              <a href="#/header/header-logos">Footer</a>
-            </li>
-            <li>
-              <a href="#/utility/utility-grid">Utility</a>
-            </li>
+             {{ /nav }}
           </ul>
 
         </div>

@@ -1,0 +1,98 @@
+title: Standard Page
+fields:
+  author:
+    display: Author
+    type: users
+  summary:
+    type: text
+  thumbnail:
+    display: Thumbnail image for listing
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: img/blog   # make sure your folder is writable
+  slideshow_section:
+    type: section
+    display: Slideshow
+  slideshow:
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    fields:
+      image:
+        type: file
+        allowed: [png, gif, jpg, jpeg]
+        destination: img/blog   # make sure your folder is writable
+  standard_section:
+    type: section
+    display: "Blog post required content"
+  content_main_title:
+    type: text
+  sub_title:
+    type: text
+  letter:
+    type: text
+    display: "Add a highlight letter"
+  content:
+    type: textarea
+    height: 200
+  extra_content_section:
+    type: replicator
+    starting_rows: 1
+    min_rows: 1
+    instructions: "Add a new section for each block or border separated content with a title"
+    sets:
+      sub_title:
+        fields:
+          extra_content_title:
+            type: text
+      text_content:
+        fields:
+          content_text:
+            type: redactor
+      single_image:
+        fields:
+          content_image:
+            type: file
+            allowed: [png, gif, jpg, jpeg]
+            destination: img/blog   # make sure your folder is writable
+      paragraph_and_image:
+        fields:
+          content_text:
+            type: redactor
+            width: 60%
+          content_image:
+            type: file
+            allowed: [png, gif, jpg, jpeg]
+            destination: img/blog   # make sure your folder is writable
+          image_position:
+            type: select
+            options:
+              - left
+              - right
+      separator:
+        display: Section separiting line and spacing
+  tags:
+    display: Tags
+    type: suggest
+    create: true
+    required: false
+    max_items: 15
+    taxonomy:
+      folder: blog
+      type: tags  
+  related:
+    display: Related Articles
+    type: suggest
+    create: true
+    max_items: 3
+    content:
+      folder: blog
+      label: title
+      value: url
+
+
+
+
+
+
+

@@ -70,6 +70,16 @@ grunt.initConfig({
           
         ],
         dest: 'js/about.js',
+      },
+      blog: {
+        src: [
+          'js/libs/jquery.themepunch.tools.min.js',
+          'js/libs/jquery.themepunch.revolution.min.js',
+          'js/app/pi.init.revolutionSlider.js',
+          'js/app/pi.slider.js',
+          'js/app/pi.init.slider.js'
+        ],
+        dest: 'js/blog.js',
       }
     },
     uglify: {
@@ -107,27 +117,6 @@ grunt.initConfig({
         options: {
           livereload: true,
         }
-      }
-    },
-    connect: {
-      options: {
-        port: 80,
-        hostname: '0.0.0.0'
-      },
-      livereload: {
-        options: {
-          middleware: function( connect ) {
-            return [
-              lrSnippet,
-              mountFolder(connect, './')
-            ];
-          }
-        }
-      }
-    },
-    open: {
-      server: {
-        url: 'http://localhost:<%= connect.options.port %>'
       }
     }
 

@@ -1,0 +1,13 @@
+<!-- Breadcrumbs -->
+<div class="pi-section-w pi-border-bottom pi-section-grey">
+	<div class="pi-section pi-titlebar pi-breadcrumb-only">
+		<div class="pi-breadcrumb pi-center-text-xs">
+			<ul>
+			{{ nav:breadcrumbs }}
+				 <li>{{ if is_current }} {{ title}} {{ else }}<a href="{{ url }}">{{ title }}</a> {{ endif }} </li>
+			{{ /nav:breadcrumbs }}
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End breadcrumbs -->

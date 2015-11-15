@@ -1,0 +1,170 @@
+<!-- Title bar -->
+<div class="pi-section-w pi-section-base pi-section-base-gradient">
+	<div class="pi-texture" style="background: url(/_themes/breaking_barriers/img/hexagon.png) repeat;"></div>
+	<div class="pi-section" style="padding: 30px 40px 26px;">
+	
+		<div class="pi-row">
+			<div class="pi-col-sm-4 pi-center-text-xs">
+				<h1 class="h2 pi-weight-300 pi-margin-bottom-5">{{title}}</h1>
+			</div>
+			<div class="pi-col-sm-8 pi-text-right pi-center-text-xs">
+				<p class="lead-20 pi-weight-300 pi-margin-top-5 pi-margin-bottom-5">{{tag_line}}</p>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!-- End title bar -->
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+{{ theme:partial src="site/_breadcrumbs" }}
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-white">
+	<div class="pi-section pi-padding-bottom-10">
+		
+		<div class="pi-row">
+		
+			<div class="pi-col-sm-9">
+				
+				<!-- Post -->
+				{{ entries:listing folder="{blog_name}" limit="4" taxonomy="yes"}}
+				<div class="pi-row">
+					
+					<!-- Post thumbnail -->
+					<div class="pi-col-sm-4">
+						<div class="pi-img-w pi-img-round-corners pi-img-shadow">
+							<a href="{{url}}">
+								<img src="{{ transform src="{{thumbnail}}" width="750" height="750" action="smart"}}" alt="">
+								
+							</a>
+						</div>
+					</div>
+					<!-- End post thumbnail -->
+					
+					<!-- Post content -->
+					<div class="pi-col-sm-8">
+						<h2 class="h3 pi-margin-top-minus-5">
+							<a href="{{url}}" class="pi-link-dark">{{title}}</a>
+						</h2>
+						<ul class="pi-meta">
+							<li><i class="icon-user"></i>by {{ author|title }}</li>
+							<li><i class="icon-clock"></i>{{date}}</li>
+						</ul>
+						<p>
+							{{letter}}{{content|truncate:300|striptags}}
+						<p>
+							<a href="{{url}}" class="btn pi-btn-base">
+								Read
+							</a>
+						</p>
+					</div>
+					<!-- End post content -->
+
+					
+				</div>
+				<!-- End post -->
+				{{ /entries:listing }}
+				
+				<hr class="pi-divider pi-divider-dashed pi-divider-big">
+				
+				<!-- End post -->
+				
+
+				<!-- End post -->
+				<div class="pi-pagenav pi-padding-bottom-40">
+					<ul>
+					{{ entries:pagination folder="{blog_name}" limit="4" taxonomy="yes"}}
+					   <a href="{{ URL }}?page=1">first</a>
+
+				        {{ if previous_page }}
+				        <li><a href="{{ previous_page }}"><</a></li>
+				        {{ endif }}
+
+				        {{ if (current_page - 3) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|-:3 }}">{{ current_page|-:3 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (current_page - 2) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|-:2 }}">{{ current_page|-:2 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (current_page - 1) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|-:1 }}">{{ current_page|-:1 }}</a></li>
+				        {{ endif  }}
+
+				        <li><a href="#" class="pi-active">{{ current_page }}</a></li>
+
+				        {{ if (total_pages - current_page) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|+:1 }}">{{ current_page|+:1 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (total_pages - current_page) > 1 }}
+				        <li><a href="{{ URL }}?page={{ current_page|+:2 }}">{{ current_page|+:2 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (total_pages - current_page) > 2 }}
+				        <li><a href="{{ URL }}?page={{ current_page|+:3 }}">{{ current_page|+:3 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if next_page }}
+				        <li><a href="{{ next_page }}">></a></li>
+				        {{ endif }}
+						
+				        <li><a href="{{ URL }}?page={{ total_pages }}">Last</a></li>
+
+					{{ /entries:pagination }}
+					</ul>
+				</div>
+				
+			</div>
+		
+			<div class="pi-sidebar pi-col-sm-3">
+				
+				<!-- Tags -->
+				<div class="pi-sidebar-block pi-padding-bottom-40">
+					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-15">
+						Tags
+					</h3>
+					<p class="pi-margin-bottom-40">
+					{{ taxonomy:listing folder="blog" type="tags"}}
+	
+						<a href="{{url}}" style="margin-bottom: 10px;"class="btn pi-btn pi-btn-base pi-btn-small">{{name}}</a>
+
+					{{ /taxonomy:listing }}
+
+				</p>
+				</div>
+				<!-- End Tags -->
+				
+				
+				<!-- Tweets -->
+				<div class="pi-sidebar-block pi-padding-bottom-40">
+					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
+						Latest Tweets
+					</h3>
+					<ul class="pi-list-with-icons pi-list-icons-twitter pi-list-big-margins">
+						<li><a href="#">@envato</a>: Neque porro quisquam est, qui dolorem ipsum quia <a href="#" class="pi-link-dark">goo.gl/5GlsEZ</a> dolor sit amet 
+						<br> <span class="pi-italic pi-small-text pi-text-silver">14 hours ago</span></li>
+						<li><a href="#">@themeforest</a>:Ut enim ad minima veniam, quis nostrum <a href="#" class="pi-link-dark">goo.gl/6QKhAB</a> exercitationem ullam corporis
+						<br> <span class="pi-italic pi-small-text pi-text-silver">19 hours ago</span></li>
+					</ul>
+				</div>
+				<!-- End tweets -->
+				
+				
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+

@@ -1,0 +1,21 @@
+//======================================
+// Home
+//======================================
+
+
+.home {
+  .postItemWrap {
+    height: auto;
+  }
+  .postItem {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    &:after {
+      content:"";
+      display:table;
+      clear:both;
+    }
+  }
+}

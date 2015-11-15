@@ -1,0 +1,18 @@
+hide: true
+
+fields:
+  title:
+    instructions: "Enter the main page title here."
+
+  main_section:
+    type: section
+    display: Header
+
+  _template:
+    type: hidden
+    default: page
+  tagline:
+    display: Tagline
+    type: text
+    instructions:
+      below: "Add the about page tagline here."

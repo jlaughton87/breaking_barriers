@@ -1,0 +1,127 @@
+// =====================================
+// Color Theme
+// =====================================
+$linkDarkHover: #34172a;
+$tertiary: #421d34;
+$secondary: #4F233F;
+$sectionBase: #5C2949;
+
+$primary: #692F54;
+$bullets: #76355E;
+$buttonBorderTop: #843B69;
+
+$linkLight: $sectionBase;
+$buttonShadow: $bullets;
+
+$buttonBase: $bullets;
+
+
+//theme colors
+// $linkDarkHover: #008599;
+// $tertiary: #00919c;
+// $secondary: #009ca8;
+// $sectionBase: #00adb0;
+
+// $primary: #0dc0c0;
+// $bullets: #10C7C7;
+// $buttonBorderTop: #5bd4d4;
+
+// $linkLight: $sectionBase;
+// $buttonShadow: $bullets;
+
+// $buttonBase: $bullets;
+
+//layout
+.pi-section-base {
+    background-color: $sectionBase;
+}
+.pi-section-base-gradient {
+    background: $primary;
+    background: -moz-linear-gradient(left, $primary 0%, $secondary 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, $primary), color-stop(100%, $secondary));
+    background: -webkit-linear-gradient(left, $primary 0%, $secondary 100%);
+    background: -o-linear-gradient(left, $primary 0%, $secondary 100%);
+    background: -ms-linear-gradient(left, $primary 0%, $secondary 100%);
+    background: linear-gradient(to right, $primary 0%, $secondary 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$primary', endColorstr='$secondary', GradientType=1);
+}
+::selection {
+  background: $tertiary;
+  
+}
+::-moz-selection {
+  background: $tertiary;
+  
+}
+::-webkit-selection {
+  background: $tertiary;
+  
+}
+//fonts
+.pi-text-base {
+    color: $primary !important;
+}
+//links
+.pi-section-parallax a {
+    color: $primary;
+}
+.pi-section-dark a {
+    color: $primary;
+}
+.pi-section-white a {
+    color: $linkLight;
+}
+.pi-section-dark a:hover {
+    color: $linkDarkHover;
+}
+.pi-section-white a:hover {
+    color: $linkDarkHover;
+}
+//menu
+.pi-section-dark .pi-menu>li.active>a {
+    color: $primary;
+}
+.pi-section-dark .pi-menu.pi-has-hover-border>li.active>a:before {
+    border-color: $primary;
+}
+.pi-submenu-dark li.active>a {
+    color: $primary;
+}
+.pi-section-dark a {
+    color: $primary;
+}
+.pi-section-dark a {
+    color: $primary;
+}
+//buttons
+.pi-btn-base {
+    background: $primary;
+    border: 1px solid $buttonBase;
+    -webkit-box-shadow: inset 0 1px 0 $buttonShadow;
+    -moz-box-shadow: inset 0 1px 0 $buttonShadow;
+    box-shadow: inset 0 1px 0 $buttonShadow;
+}
+
+.pi-btn-base:hover {
+    background: $secondary;
+    border: 1px solid $secondary;
+   border-top-color: $secondary;
+}
+.pi-btn-base.pi-btn-no-border {
+    border-color: $primary;
+    border-top-color: $buttonBorderTop;
+}
+.pi-btn-base.pi-btn-no-border:hover {
+    border-color: $secondary;
+    border-top-color: $secondary;
+}
+//icons
+.pi-list-icons-dot li:after, .pi-list-icons-ok li:after, .pi-list-icons-link li:after, .pi-list-icons-help li:after {
+    color: $bullets;
+}
+.pi-bullets-base li .pi-bullet-icon, .pi-bullets-base li .pi-bullet-icon-img {
+    background: $bullets;
+}
+.pi-icon-box .pi-icon-box-icon.pi-icon-box-icon-base, .pi-icon-box-vertical .pi-icon-box-icon.pi-icon-box-icon-base {
+    color: $bullets;
+}

@@ -1,0 +1,12 @@
+title: Standard Page
+include:
+  - meta
+  - header
+
+fields:
+
+  content:
+    hide: true
+  subTitle:
+    type: text
+    instructions: Add sub header here

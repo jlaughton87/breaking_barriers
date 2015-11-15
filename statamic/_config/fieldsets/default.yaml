@@ -1,0 +1,99 @@
+title: Standard Page
+include:
+  - meta
+
+fields:
+  content:
+    type: hidden
+  slideshow_section:
+    type: section
+    display: Slideshow Section
+  slideshow_slides:
+    type: replicator
+    instructions: |
+        Replicate a new set for each slide of the home slideshow
+
+    sets:
+      slide:
+        display: Slide
+        instructions: Add a slide
+        fields:
+          main_image:
+            type: file
+            allowed: [png, jpg, gif]
+            destination: assets/img/
+            instructions: Background Image
+          layer:
+            instructions: Each layer is a new object added to the slide which will fade in and out. Fill in the first 5 grid fields for every layer. After that there are 3 types of content to choose from for each layer | Image - Add an image and ignore the last 3 grid fields | Text content - Ignore the image grid field and add the text content. Select the background colour (leave blank if none) | Button - Ignore the image grid field and add the text content to show within your button and add the button link.
+            type: grid
+            starting_rows: 1
+            min_rows: 1
+            max_rows: 10
+            fields:
+              offset_hor:
+                type: text
+                instructions: In px
+                width: 7%
+              offset_vert:
+                type: text
+                instructions: In px
+                width: 7%
+              offset_depth:
+                type: text
+                instructions: largest number is front
+                width: 7%
+              speed:
+                type: text
+                instructions: 1 second = 1000
+                width: 7%
+              start_offset:
+                type: text
+                instructions: 1 second = 1000
+                width: 7%
+              layer_image:
+                type: file
+                allowed: [png, jpg, gif]
+                destination: assets/img/
+                instructions: ignore if text
+                width: 10%
+              text_content:
+                type: text
+                width: 30%
+              large_text:
+                type: checkbox
+              text_background: 
+                type: color
+                show_palette_only: true
+                starting_color: 'transparent'
+                show_initial: false
+                palette:
+                  - 'transparent'
+                  - '#fff'
+                  - '#21252B'
+                  - '#0dc0c0'
+              link:
+                type: text
+                width: 20%
+              link_icon:
+                type: text
+  focus_section:
+    type: section
+    display: Focus Section
+  focus:
+    display: "Enter 3 focus points here."
+    type: grid
+    starting_rows: 3
+    min_rows: 3
+    max_rows: 3
+    fields:
+      focus_title:
+        display: Focus title
+        type: text
+        width: 25%
+      focus_body:
+        display: Focus body copy
+        type: textarea
+        width: 50%
+      focus_icon:
+        type: text
+        instructions: Add icon name from /icons

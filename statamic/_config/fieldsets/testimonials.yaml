@@ -1,0 +1,71 @@
+title: Standard Page
+include:
+  - meta
+  - header
+
+fields:
+  
+  content:
+    hide: true
+  subTitle:
+    type: text
+    instructions: Add sub header here
+  testimonial_section:
+    type: section
+    display: Testimonials 
+  testimonials:
+    type: replicator
+    instructions: |
+      Add a new section for each testimonial. Rearrange by dragging.
+
+    sets:
+      testimonial-row-of-2:
+        instructions: Add a row of 2 Testimonials
+        fields:
+          testimonialsGrid:
+            type: grid
+            starting_rows: 2
+            min_rows: 2
+            max_rows: 2
+            fields:
+              image:
+                type: file
+                allowed: [png, jpg, gif]
+                destination: assets/img/
+              name:
+                display: Name
+                type: text
+              job_title:
+                display: Job title
+                type: text
+              company:
+                display: Company
+                type: text
+              body:
+                display: "Enter testimonial content"
+                type: redactor
+      testimonial-row-of-3:
+        instructions: Add a row of 3 Testimonials
+        fields:
+          testimonialsGrid:
+            type: grid
+            starting_rows: 3
+            min_rows: 3
+            max_rows: 3
+            fields:
+              image:
+                type: file
+                allowed: [png, jpg, gif]
+                destination: assets/img/
+              name:
+                display: Name
+                type: text
+              job_title:
+                display: Job title
+                type: text
+              company:
+                display: Company
+                type: text
+              body:
+                display: "Enter testimonial content"
+                type: redactor

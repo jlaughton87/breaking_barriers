@@ -86,25 +86,37 @@
 		
 		<!-- Slider -->
 		<div class="pi-slider-wrapper pi-slider-arrows-inside pi-slider-show-pagination-hover pi-slider-show-arrow-hover pi-text-center">
+		
+			
+		
 			<div class="pi-slider pi-slider-animate-opacity">
 				{{ get_content from="about/testimonials" }}
 				<!-- Slide -->
+				{{ testimonials }}	
+				{{testimonialsGrid}}
 				<div class="pi-slide">	
+				<a href="/about/testimonials">
 					<p class="lead-34 pi-margin-bottom-20 pi-text-white">
-						<i class="icon-quote pi-quote-left pi-text-opacity"></i>{{snippet}}<i class="icon-quote pi-quote-right pi-text-opacity"></i>
+						<i class="icon-quote pi-quote-left pi-text-opacity"></i>{{body|truncate:100}}<i class="icon-quote pi-quote-right pi-text-opacity"></i>
 					</p>
 					<p class="pi-weight-700 pi-uppercase pi-letter-spacing pi-margin-bottom-5 pi-text-base-dark">
 						{{name}}
 					</p>
 					<p class="pi-italic">
-						{{comany}}
+						<span class="pi-testimonial-author-company">{{job_title}} <a href="#">{{company}}</a></span>
 					</p>
+				</a>
 				</div>
+				{{/testimonialsGrid}}
+			
+				{{ /testimonials }}
 				{{ /get_content }}
+
 				<!-- End slide -->
 				
 			</div>
 		</div>
+		
 		<!-- End slider -->
 		
 	</div>
@@ -114,82 +126,40 @@
 
 <!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
-<div class="pi-section-w pi-section-white">
+<div class="pi-section-w pi-section-dark">
 		
 		<!-- Team -->
 		<div class="pi-row pi-liquid-col-sm-4 pi-gallery pi-stacked pi-no-margin-bottom pi-column-fix">
+		<div class="twoMembers">
+			{{ entries:listing from="about/meet-the-team" }}
 			
+			
+
 			<!-- Team item -->
-			<div class="pi-gallery-item">
-				<div class="pi-img-w pi-img-grayscale-hover-70">
-					<img src="/_themes/breaking_barriers/img/img_external/team/leader-11.jpg" alt="">
-					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
-						<div class="pi-caption-bottom">
-							<div>
-								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Mike Ross</a></h5>
-								<p class="pi-italic pi-text-shadow">
-									Co-Founder, Art Director
-								</p>
+				<div class="pi-gallery-item">
+					<div class="pi-img-w pi-img-grayscale-hover-70">
+						<img src="{{image}}" alt="">
+						<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
+							<div class="pi-caption-bottom">
+								<div>
+								
+								
+									<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="{{url}}" class="pi-link-white">{{title}}</a></h5>
+									<p class="pi-italic pi-text-shadow">
+										{{role}}
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- End team item -->
 			
-			<!-- Team item -->
-			<div class="pi-gallery-item">
-				<div class="pi-img-w pi-img-grayscale-hover-70">
-					<img src="/_themes/breaking_barriers/img/img_external/team/leader-22.jpg" alt="">
-					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
-						<div class="pi-caption-bottom">
-							<div>
-								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Mattias Nuffer</a></h5>
-								<p class="pi-italic pi-text-shadow">
-									Co-Founder, Web Developer
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 			<!-- End team item -->
+			{{ /entries:listing }}
+			</div>
 			
-			<!-- Team item -->
-			<div class="pi-gallery-item">
-				<div class="pi-img-w pi-img-grayscale-hover-70">
-					<img src="/_themes/breaking_barriers/img/img_external/team/leader-33.jpg" alt="">
-					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
-						<div class="pi-caption-bottom">
-							<div>
-								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Kindra Hall</a></h5>
-								<p class="pi-italic pi-text-shadow">
-									Web & Graphic Designer
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End team item -->
 			
-			<!-- Team item -->
-			<div class="pi-gallery-item">
-				<div class="pi-img-w pi-img-grayscale-hover-70">
-					<img src="/_themes/breaking_barriers/img/img_external/team/leader-44.jpg" alt="">
-					<div class="pi-img-overlay pi-img-overlay-darker-hovered-2 pi-caption-opened">
-						<div class="pi-caption-bottom">
-							<div>
-								<h5 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-text-shadow"><a href="#" class="pi-link-white">Mike Ross</a></h5>
-								<p class="pi-italic pi-text-shadow">
-									Co-Founder, Art Director
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End team item -->
+			
 		</div>
 		<!-- End team -->
 </div>
@@ -213,13 +183,8 @@
 		
 		<p>			
 			<a href="#" class="btn pi-btn-base-2 pi-btn-big">
-				Get a Free Quote
+				Get in-touch
 			</a>
-		</p>
-		
-		<p class="lead-22">			
-			or give us call
-			<span class="pi-weight-700 pi-text-white">+988-344-5599</span>
 		</p>
 
 	</div>

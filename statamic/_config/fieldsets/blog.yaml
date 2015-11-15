@@ -1,0 +1,12 @@
+title: Standard Page
+fields:
+  content: 
+    type: hidden
+  tag_line:
+    type: text
+
+
+
+
+
+

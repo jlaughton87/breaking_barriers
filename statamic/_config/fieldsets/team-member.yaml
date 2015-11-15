@@ -1,0 +1,39 @@
+title: Standard Page
+fields:
+  content:
+    type: hidden
+  subTitle:
+    type: text
+    instructions: Add sub header here
+  image:
+    type: file
+    allowed: [png, jpg, gif]
+    destination: assets/img/
+  job_title:
+    display: Job title
+    type: text
+  role:
+    display: Role
+    type: text
+  bio:
+    type: redactor
+    instructions: Add personal bio here
+  social:
+    display: "Enter social media info here"
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    max_rows: 1
+    fields:
+      li:
+        display: Linkd In
+        type: text
+        width: 33%
+      email:
+        display: Email
+        type: text
+        width: 33%
+      number:
+        display: Contact Number
+        type: text
+        width: 33%

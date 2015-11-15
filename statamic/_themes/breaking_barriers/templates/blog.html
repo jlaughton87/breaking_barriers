@@ -5,10 +5,10 @@
 	
 		<div class="pi-row">
 			<div class="pi-col-sm-4 pi-center-text-xs">
-				<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Blog</h1>
+				<h1 class="h2 pi-weight-300 pi-margin-bottom-5">{{title}}</h1>
 			</div>
 			<div class="pi-col-sm-8 pi-text-right pi-center-text-xs">
-				<p class="lead-20 pi-weight-300 pi-margin-top-5 pi-margin-bottom-5">Neque porro quisquam qui dolorem</p>
+				<p class="lead-20 pi-weight-300 pi-margin-top-5 pi-margin-bottom-5">{{tag_line}}</p>
 			</div>
 		</div>
 		
@@ -20,20 +20,7 @@
 
 <!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
-<!-- Breadcrumbs -->
-<div class="pi-section-w pi-border-bottom pi-section-grey">
-	<div class="pi-section pi-titlebar pi-breadcrumb-only">
-		<div class="pi-breadcrumb pi-center-text-xs">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Company</a></li>
-				<li>Blog</li>
-			</ul>
-		</div>
-	</div>
-</div>
-<!-- End breadcrumbs -->
-
+{{ theme:partial src="site/_breadcrumbs" }}
 <!-- - - - - - - - - - END SECTION - - - - - - - - - -->
 
 <!-- - - - - - - - - - SECTION - - - - - - - - - -->
@@ -46,20 +33,15 @@
 			<div class="pi-col-sm-9">
 				
 				<!-- Post -->
+				{{entries:listing folder="blog" sort_dir="desc" limit="4" paginate="true"}}
 				<div class="pi-row">
 					
 					<!-- Post thumbnail -->
 					<div class="pi-col-sm-4">
 						<div class="pi-img-w pi-img-round-corners pi-img-shadow">
-							<a href="/_themes/breaking_barriers/img/img_external/gallery/healthy-food.jpg" class="pi-colorbox">
-								<img src="/_themes/breaking_barriers/img/img_external/gallery/healthy-food.jpg" alt="">
-								<div class="pi-img-overlay pi-img-overlay-dark">
-									<div class="pi-caption-centered">
-										<div>
-											<span class="pi-caption-icon pi-caption-scale icon-search"></span>
-										</div>
-									</div>
-								</div>
+							<a href="{{url}}">
+								<img src="{{ transform src="{{thumbnail}}" width="750" height="750" action="smart"}}" alt="">
+								
 							</a>
 						</div>
 					</div>
@@ -68,270 +50,96 @@
 					<!-- Post content -->
 					<div class="pi-col-sm-8">
 						<h2 class="h3 pi-margin-top-minus-5">
-							<a href="#" class="pi-link-dark">Ullam Corporis Suscipit Laboriosam</a>
+							<a href="{{url}}" class="pi-link-dark">{{title}}</a>
 						</h2>
 						<ul class="pi-meta">
-							<li><i class="icon-user"></i>by <a href="#">Admin</a></li>
-							<li><i class="icon-clock"></i>May 23, 2014</li>
-							<li><i class="icon-comment"></i><a href="#">2 Comments</a></li>
+							<li><i class="icon-user"></i>by {{ author|title }}</li>
+							<li><i class="icon-clock"></i>{{date}}</li>
 						</ul>
 						<p>
-							At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi...
-						</p>
+							{{letter}}{{content|truncate:300|striptags}}
 						<p>
-							<a href="#" class="btn pi-btn-base">
+							<a href="{{url}}" class="btn pi-btn-base">
 								Read
 							</a>
 						</p>
 					</div>
 					<!-- End post content -->
-					
-				</div>
-				<!-- End post -->
-				
-				<hr class="pi-divider pi-divider-dashed pi-divider-big">
-				
-				<!-- Post -->
-				<div class="pi-row">
-					
-					<!-- Post thumbnail -->
-					<div class="pi-col-sm-4">
-						<div class="pi-img-w pi-img-round-corners pi-img-shadow">
-							<a href="/_themes/breaking_barriers/img/img_external/gallery/bread-and-spikes.jpg" class="pi-colorbox">
-								<img src="/_themes/breaking_barriers/img/img_external/gallery/bread-and-spikes.jpg" alt="">
-								<div class="pi-img-overlay pi-img-overlay-dark">
-									<div class="pi-caption-centered">
-										<div>
-											<span class="pi-caption-icon pi-caption-scale icon-search"></span>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<!-- End post thumbnail -->
-					
-					<!-- Post content -->
-					<div class="pi-col-sm-8">
-						<h2 class="h3 pi-margin-top-minus-5">
-							<a href="#" class="pi-link-dark">Nam libero Tempore Cum Soluta</a>
-						</h2>
-						<ul class="pi-meta">
-							<li><i class="icon-user"></i>by <a href="#">Admin</a></li>
-							<li><i class="icon-clock"></i>May 21, 2014</li>
-							<li><i class="icon-comment"></i><a href="#">1 Comments</a></li>
-						</ul>
-						<p>
-							At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi...
-						</p>
-						<p>
-							<a href="#" class="btn pi-btn-base">
-								Read
-							</a>
-						</p>
-					</div>
-					<!-- End post content -->
-					
-				</div>
-				<!-- End post -->
-				
-				<hr class="pi-divider pi-divider-dashed pi-divider-big">
-				
-				<!-- Post -->
-				<div class="pi-row">
-					
-					<!-- Post thumbnail -->
-					<div class="pi-col-sm-4">
-						<div class="pi-img-w pi-img-round-corners pi-img-shadow">
-							<a href="/_themes/breaking_barriers/img/img_external/gallery/globe-on-green-leaf.jpg" class="pi-colorbox">
-								<img src="/_themes/breaking_barriers/img/img_external/gallery/globe-on-green-leaf.jpg" alt="">
-								<div class="pi-img-overlay pi-img-overlay-dark">
-									<div class="pi-caption-centered">
-										<div>
-											<span class="pi-caption-icon pi-caption-scale icon-search"></span>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<!-- End post thumbnail -->
-					
-					<!-- Post content -->
-					<div class="pi-col-sm-8">
-						<h2 class="h3 pi-margin-top-minus-5">
-							<a href="#" class="pi-link-dark">Blanditiis Praesentium Voluptatum Deleniti</a>
-						</h2>
-						<ul class="pi-meta">
-							<li><i class="icon-user"></i>by <a href="#">Admin</a></li>
-							<li><i class="icon-clock"></i>May 15, 2014</li>
-							<li><i class="icon-comment"></i><a href="#">1 Comments</a></li>
-						</ul>
-						<p>
-							At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi...
-						</p>
-						<p>
-							<a href="#" class="btn pi-btn-base">
-								Read
-							</a>
-						</p>
-					</div>
-					<!-- End post content -->
-					
-				</div>
-				<!-- End post -->
-				
-				<hr class="pi-divider pi-divider-dashed pi-divider-big">
-				
-				<!-- Post -->
-				<div class="pi-row">
-					
-					<!-- Post thumbnail -->
-					<div class="pi-col-sm-4">
-						<div class="pi-img-w pi-img-round-corners pi-img-shadow">
-							<a href="/_themes/breaking_barriers/img/img_external/gallery/digital-photo-camera.jpg" class="pi-colorbox">
-								<img src="/_themes/breaking_barriers/img/img_external/gallery/digital-photo-camera.jpg" alt="">
-								<div class="pi-img-overlay pi-img-overlay-dark">
-									<div class="pi-caption-centered">
-										<div>
-											<span class="pi-caption-icon pi-caption-scale icon-plus"></span>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<!-- End post thumbnail -->
-					
-					<!-- Post content -->
-					<div class="pi-col-sm-8">
-						<h2 class="h3 pi-margin-top-minus-5">
-							<a href="#" class="pi-link-dark">Saepe Eveniet Voluptates Repudiandae Sint et Molestiae</a>
-						</h2>
-						<ul class="pi-meta">
-							<li><i class="icon-user"></i>by <a href="#">Admin</a></li>
-							<li><i class="icon-clock"></i>May 19, 2014</li>
-							<li><i class="icon-comment"></i><a href="#">3 Comments</a></li>
-						</ul>
-						<p>
-							At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi...
-						</p>
-						<p>
-							<a href="#" class="btn pi-btn-base">
-								Read
-							</a>
-						</p>
-					</div>
-					<!-- End post content -->
-					
-				</div>
-				<!-- End post -->
-				
-				<hr class="pi-divider pi-divider-dashed pi-divider-big">
 
+					
+				</div>
+				<!-- End post -->
+				{{ /entries:listing }}
+				
+				<hr class="pi-divider pi-divider-dashed pi-divider-big">
+				
+				<!-- End post -->
 				<div class="pi-pagenav pi-padding-bottom-40">
 					<ul>
-						<li><a href="#">Previous</a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#" class="pi-active">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">...</a></li>
-						<li><a href="#">115</a></li>
-						<li><a href="#">Next</a></li>
+					{{ entries:pagination folder="blog" sort_dir="desc" limit="4" paginate="true"}}
+					   <a href="{{ URL }}?page=1">first</a>
+
+				        {{ if previous_page }}
+				        <li><a href="{{ previous_page }}"><</a></li>
+				        {{ endif }}
+
+				        {{ if (current_page - 3) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|-:3 }}">{{ current_page|-:3 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (current_page - 2) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|-:2 }}">{{ current_page|-:2 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (current_page - 1) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|-:1 }}">{{ current_page|-:1 }}</a></li>
+				        {{ endif  }}
+
+				        <li><a href="#" class="pi-active">{{ current_page }}</a></li>
+
+				        {{ if (total_pages - current_page) > 0 }}
+				        <li><a href="{{ URL }}?page={{ current_page|+:1 }}">{{ current_page|+:1 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (total_pages - current_page) > 1 }}
+				        <li><a href="{{ URL }}?page={{ current_page|+:2 }}">{{ current_page|+:2 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if (total_pages - current_page) > 2 }}
+				        <li><a href="{{ URL }}?page={{ current_page|+:3 }}">{{ current_page|+:3 }}</a></li>
+				        {{ endif  }}
+
+				        {{ if next_page }}
+				        <li><a href="{{ next_page }}">></a></li>
+				        {{ endif }}
+						
+				        <li><a href="{{ URL }}?page={{ total_pages }}">Last</a></li>
+
+					{{ /entries:pagination }}
 					</ul>
 				</div>
+		
 				
 			</div>
 		
 			<div class="pi-sidebar pi-col-sm-3">
 				
-				<!-- Search -->
-				<div class="pi-sidebar-block pi-padding-bottom-60">
-					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
-						Search
-					</h3>
-					<form class="pi-grouped-input pi-pi-search-form-wide">
-						<button type="submit" class="btn pi-btn-base"><i class="icon-search-1"></i></button>
-						<div class="pi-input-inline">
-							<input type="text" class="form-control pi-input-wide" placeholder="e.g. Inspiration">
-						</div>
-					</form>
-				</div>
-				<!-- End search -->
-				
-				<!-- Categories -->
+				<!-- Tags -->
 				<div class="pi-sidebar-block pi-padding-bottom-40">
 					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-15">
-						Categories
+						Tags
 					</h3>
-					<ul class="pi-list-with-icons pi-list-icons-right-open">
-						<li><a href="#">Creative</a> (2)</li>
-						<li><a href="#">Design</a> (9)</li>
-						<li><a href="#">Photography</a> (9)</li>
-						<li><a href="#">Image</a> (2)</li>
-						<li><a href="#">Videos</a> (4)</li>
-						<li><a href="#">Wordpress</a> (4)</li>
-					</ul>
+					<p class="pi-margin-bottom-40">
+					{{ taxonomy:listing folder="blog" type="tags"}}
+	
+						<a href="{{url}}" style="margin-bottom: 10px;"class="btn pi-btn pi-btn-base pi-btn-small">{{name}}</a>
+
+					{{ /taxonomy:listing }}
+
+				</p>
 				</div>
-				<!-- End categories -->
+				<!-- End Tags -->
 				
-				<!-- Flickr photos -->
-				<div class="pi-sidebar-block pi-padding-bottom-40">
-					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
-						Photos from Flickr
-					</h3>
-					<div class="pi-gallery pi-liquid-col-md-3 pi-liquid-col-sm-2 pi-liquid-col-xs-6 pi-liquid-col-2xs-3 pi-liquid-col-3xs-2 pi-gallery-small-margins colsWidthFix">
-						<div class="pi-gallery-item">
-							<div class="pi-img-w pi-img-round-corners pi-img-shadow-light">
-								<a href="#">
-									<img src="/_themes/breaking_barriers/img/img_external/gallery/sensuality-at-the-sea-sq.jpg" alt=""/>
-									<span class="pi-img-overlay pi-img-overlay-dark pi-no-padding"></span>
-								</a>
-							</div>
-						</div>
-						<div class="pi-gallery-item">
-							<div class="pi-img-w pi-img-round-corners pi-img-shadow-light">
-								<a href="#">
-									<img src="/_themes/breaking_barriers/img/img_external/gallery/globe-on-green-leaf-sq.jpg" alt=""/>
-									<span class="pi-img-overlay pi-img-overlay-dark pi-no-padding"></span>
-								</a>
-							</div>
-						</div>
-						<div class="pi-gallery-item">
-							<div class="pi-img-w pi-img-round-corners pi-img-shadow-light">
-								<a href="#">
-									<img src="/_themes/breaking_barriers/img/img_external/gallery/digital-photo-camera-sq.jpg" alt=""/>
-									<span class="pi-img-overlay pi-img-overlay-dark pi-no-padding"></span>
-								</a>
-							</div>
-						</div>
-						<div class="pi-gallery-item">
-							<div class="pi-img-w pi-img-round-corners pi-img-shadow-light">
-								<a href="#">
-									<img src="/_themes/breaking_barriers/img/img_external/gallery/haystack-sq.jpg" alt=""/>
-									<span class="pi-img-overlay pi-img-overlay-dark pi-no-padding"></span>
-								</a>
-							</div>
-						</div>
-						<div class="pi-gallery-item">
-							<div class="pi-img-w pi-img-round-corners pi-img-shadow-light">
-								<a href="#">
-									<img src="/_themes/breaking_barriers/img/img_external/gallery/microphone-on-concert-sq.jpg" alt=""/>
-									<span class="pi-img-overlay pi-img-overlay-dark pi-no-padding"></span>
-								</a>
-							</div>
-						</div>
-						<div class="pi-gallery-item">
-							<div class="pi-img-w pi-img-round-corners pi-img-shadow-light">
-								<a href="#">
-									<img src="/_themes/breaking_barriers/img/img_external/gallery/mobile-business-sq.jpg" alt=""/>
-									<span class="pi-img-overlay pi-img-overlay-dark pi-no-padding"></span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End flickr photos -->
 				
 				<!-- Tweets -->
 				<div class="pi-sidebar-block pi-padding-bottom-40">
@@ -347,26 +155,6 @@
 				</div>
 				<!-- End tweets -->
 				
-				<!-- Testimonial -->
-				<div class="pi-sidebar-block pi-padding-bottom-40">
-					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
-						Latest testimonial
-					</h3>
-					<div class="pi-testimonial pi-testimonial-author-with-icon">
-						<div class="pi-testimonial-content pi-testimonial-content-quotes">
-							<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.</p>
-						</div>
-						<div class="pi-testimonial-author pi-clearfix">
-							<span class="pi-icon-man"></span>
-
-							<div>
-								<span class="pi-testimonial-author-name"><strong>Mattias Nuffer</strong></span> <br>
-								<span class="pi-testimonial-author-company">Executive Director <a href="#">Company Inc.</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End testimonial -->
 				
 			</div>
 			
@@ -377,33 +165,4 @@
 
 <!-- - - - - - - - - - END SECTION - - - - - - - - - -->
 
-<!-- - - - - - - - - - SECTION - - - - - - - - - -->
-<div class="pi-section-w pi-shadow-inside-top pi-section-grey">
-	<div class="pi-texture" style="background: url(/_themes/breaking_barriers/img/hexagon.png) repeat;"></div>
-	<div class="pi-section">
-		
-		<div class="pi-text-center">
-			<h3 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-has-border pi-has-tall-border pi-has-short-border">
-				Subscribe
-			</h3>
-		</div>
-		
-		<p class="lead-16 pi-text-center">
-			Excepteur sint occaecat cupidatat non proident, sunt in culpa
-		</p>
-		
-		<!-- Forms -->
-		<form class="pi-search-form-wide pi-text-center pi-margin-bottom-20" role="form">
-			<div class="pi-input-inline" style="margin-right: 10px; width: 360px;">
-				<input type="text" class="form-control input-lg pi-input-wide" id="exampleInputSubscribe" placeholder="Enter email address">
-			</div>
-			<button type="submit" class="btn pi-btn-base pi-btn-big">Submit</button>
-		</form>
-		<!-- End forms -->
-		
-		<p class="pi-smaller-text pi-text-center">
-			We hereby promise to be responsible emailers.
-		</p>
 
-	</div>
-</div>

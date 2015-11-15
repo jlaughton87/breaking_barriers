@@ -1,41 +1,25 @@
 
-<div class="pi-section-w pi-section-base pi-section-parallax" style="background-image: url(/_themes/breaking_barriers/img/img_external/gallery/boat.jpg);">
+<div class="pi-section-w pi-section-base pi-section-parallax" style="background-image: url({{tagline_background}});">
   <div class="pi-texture" style="background: rgba(24, 28, 32, 0.8);"></div>
   <div class="pi-section pi-padding-top-100 pi-padding-bottom-80 pi-text-center">
 
     <p>
       <i class="icon-paper-plane pi-icon-circle pi-icon-base pi-icon-big" style="width: 74px; height: 74px; line-height: 74px;"></i>
     </p>
-    
+    {{tagline}}
     <h2 class="h1 pi-text-shadow pi-has-border pi-has-tall-border pi-has-base-border pi-has-short-border" style="font-size: 60px;">
-      Feel Free. <span class="pi-text-base">Say Hey!</span>
+      {{start}} <span class="pi-text-base">{{featured}}</span>
     </h2>
     
     <p class="lead-18 pi-weight-300 pi-margin-bottom-30 pi-p-half">
-      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+      {{subTitle}}
     </p>
-    
+    {{/tagline}}
   </div>
 </div>
 
 <!-- - - - - - - - - - END SECTION - - - - - - - - - -->
-<!-- - - - - - - - - - SECTION - - - - - - - - - -->
-
-<!-- Breadcrumbs -->
-<div class="pi-section-w pi-border-bottom pi-section-grey">
-  <div class="pi-section pi-titlebar pi-breadcrumb-only">
-    <div class="pi-breadcrumb">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Company</a></li>
-        <li>Contact Us</li>
-      </ul>
-    </div>
-  </div>
-</div>
-<!-- End breadcrumbs -->
-
-<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+{{ theme:partial src="site/_breadcrumbs" }}
 
 <!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
@@ -55,41 +39,42 @@
             <div class="pi-col-sm-6">
               <div class="form-group pi-padding-bottom-10">
                 <label for="exampleInputName1">Name *</label>
-                <input type="text" class="form-control form-control-name" id="exampleInputName1"
-                     placeholder="e.g. Adam Smith">
+                <div class="pi-input-with-icon">
+                  <div class="pi-input-icon"><i class="icon-user"></i></div>
+                  <input type="text" class="form-control" id="exampleInputName-4" placeholder="e.g. Adam Smith">
+                </div>
               </div>
               <div class="form-group pi-padding-bottom-10">
                 <label for="exampleInputEmail1">Email address *</label>
-                <input type="email" class="form-control form-control-email" id="exampleInputEmail1"
-                     placeholder="e.g. mail@example.com">
+                <div class="pi-input-with-icon">
+                  <div class="pi-input-icon"><i class="icon-mail"></i></div>
+                  <input type="email" class="form-control" id="exampleInputEmail-4" placeholder="e.g. mail@example.com">
+                </div>
               </div>
             </div>
             <div class="pi-col-sm-6">
               <div class="form-group pi-padding-bottom-10">
                 <label for="exampleInputCompany">Company Name</label>
-                <input type="text" class="form-control form-control-company-name" id="exampleInputCompany"
-                     placeholder="e.g. PI Studio">
+                <div class="pi-input-with-icon">
+                  <div class="pi-input-icon"><i class="icon-users"></i></div>
+                  <input type="text" class="form-control" id="exampleInputCompanyname-4" placeholder="e.g. Breaking Barriers">
+                </div>
               </div>
               <div class="form-group pi-padding-bottom-10">
                 <label for="exampleInputPhone">Phone</label>
-                <input type="text" class="form-control form-control-phone" id="exampleInputPhone"
-                     placeholder="e.g. +11111111">
+                <div class="pi-input-with-icon">
+                  <div class="pi-input-icon"><i class="icon-phone"></i></div>
+                  <input type="text" class="form-control" id="exampleInputPhone-4" placeholder="e.g. 0123456789">
+                </div>
               </div>
             </div>
           </div>
           <div class="form-group pi-padding-bottom-10">
-            <label for="exampleInputSelect">Your Budget</label>
-            <select class="form-control form-control-budjet" id="exampleInputSelect">
-              <option>$1000</option>
-              <option>$1500</option>
-              <option>$3000</option>
-              <option>$5000</option>
-              <option>$10000</option>
-            </select>
-          </div>
-          <div class="form-group pi-padding-bottom-10">
             <label for="exampleInputMessage1">Message *</label>
-            <textarea class="form-control form-control-comments" id="exampleInputMessage1" placeholder="How can we help?" rows="3"></textarea>
+            <div class="pi-input-with-icon">
+              <div class="pi-input-icon"><i class="icon-pencil"></i></div>
+              <textarea class="form-control" id="exampleInputMessage-4" placeholder="How can we help?" rows="4"></textarea>
+            </div>
           </div>
           <div  class="form-group pi-padding-bottom-10">
             <div class="g-recaptcha" data-sitekey="6LcQ-_USAAAAACuWYZck-TkqvxpqeptnCgasjQlJ"></div>
@@ -113,23 +98,30 @@
         </h2>
         
         <ul class="pi-list-with-icons pi-list-big-margins pi-padding-bottom-10">
-          <li><span class="pi-bullet-icon"><i class="icon-location"></i></span>557 Cyan Avenue, Suite 65, <br>New York, CA 9008<br>
-          <a href="#">Get Directions</a></li>
+          {{address}}
+          <li><span class="pi-bullet-icon"><i class="icon-location"></i></span>{{first_line}}<br>{{second_line}}, {{postcode}}<br>
+          {{/address}}
           
-          <li><span class="pi-bullet-icon"><i class="icon-mail"></i></span><a href="#">example@mail.com</a><br><a href="#">hello@mail.com</a></li>
+          <li><span class="pi-bullet-icon"><i class="icon-mail"></i></span>
+          {{emails}}
+            <a href="mailto: {{email_address}}">{{email_address}}</a>
+            <br>
+          {{/emails}}
+          </li>
           
-          <li><span class="pi-bullet-icon"><i class="icon-phone"></i></span>+1 (330) <strong>993-443</strong>, <br>
-          +1 (330) <strong>995-445</strong></li>
-          
-          <li><span class="pi-bullet-icon"><i class="icon-clock"></i></span>Monday - Friday: <strong>9:00 am - 10:00 pm</strong>
-          <br>
-          Saturday - Sunday: <strong>Closed</strong></li>
+
+          <li><span class="pi-bullet-icon"><i class="icon-phone"></i></span>
+          {{numbers}}
+            {{number}}{{if !last }},{{endif}}
+            <br>
+          {{/numbers}}
+          </li>
+
         </ul>
         <ul class="pi-social-icons pi-small pi-jump pi-colored-bg pi-round pi-padding-bottom-10">
-          <li><a href="#" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
-          <li><a href="#" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
-          <li><a href="#" class="pi-social-icon-dribbble"><i class="icon-dribbble"></i></a></li>
-          <li><a href="#" class="pi-social-icon-rss"><i class="icon-rss"></i></a></li>
+          {{if li}}<li><a target="_blank" href="{{li}}" class="pi-social-icon-linkedin"><i class="icon-linkedin"></i></a></li>{{endif}}
+          {{if fb}}<li><a target="_blank" href="{{fb}}" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>{{endif}}
+          {{if tw}}<li><a target="_blank" href="{{tw}}" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>{{endif}}
         </ul>
 
       </div>
@@ -141,19 +133,18 @@
 <!-- - - - - - - - - - END SECTION - - - - - - - - - -->
 
 <!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
 <div class="pi-section-w pi-section-white">
   <div class="pi-google-map pi-google-map-wide googleMap"
      data-map-type="roadmap"
      data-map-zoom="14"
      data-map-style="base"
-     data-map-marker="/_themes/breaking_barriers/img/marker-base.png"
-     data-map-marker-size="67,81"
-     data-map-marker-anchor="30,81"
-     data-map-coords="40.70502;-74.006344"
-     data-map-address="Vancouver"
-     data-map-address2="Toronto">
+     {{address}}
+     data-map-address2="{{postcode}}">
+     {{/address}}
   </div>
 </div>
+
 
 <!-- - - - - - - - - - END SECTION - - - - - - - - - -->
 </div>

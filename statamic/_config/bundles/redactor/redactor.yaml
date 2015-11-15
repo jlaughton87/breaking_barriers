@@ -8,23 +8,12 @@
 
 # Order and choose your buttons
 buttons:
-  - formatting
   - bold
   - italic
   - deleted
   - unorderedlist
-  - orderedlist
-  - outdent
-  - indent
-  - image
-  - file
-  - video
-  - table
   - link
-  - horizontalrule
   - fontcolor
-  - backcolor
-  - alignment
   - html
 
 # Turn on/off cleanup on paste
@@ -49,9 +38,6 @@ imageFloatMargin: 10px
 formatting:
   - p
   - blockquote
-  - pre
-  - h1
-  - h2
   - h3
   - h4
 
@@ -59,7 +45,7 @@ formatting:
 minHeight: 150
 
 # Turn on/off paragraph formatting
-paragraphize: false
+paragraphize: true
 
 # Turn on/off keypress shortcuts
 shortcuts: true
