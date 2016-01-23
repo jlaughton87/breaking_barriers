@@ -45,5 +45,9 @@ tags:
   - differenttag
   - athirdtag
 thumbnail: /img/blog/coffee-20151115131050.jpeg
+related:
+  - /blog/example-blog-post-4
+  - /blog/example-blog-post-3
+  - /blog/example-blog-post-2
 ---
 orem ipsum dolor sit amet, consectetur adipisicing elit. Eos inventore omnis facere labore maiores sit cupiditate et, fuga, autem nostrum veniam error ipsam. Voluptatum, reiciendis pariatur consectetur velit, doloribus quibusdam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos inventore omnis facere labore maiores sit cupiditate et, fuga, autem nostrum veniam error ipsam. Voluptatum, reiciendis pariatur consectetur velit, doloribus quibusdam!Lorem.

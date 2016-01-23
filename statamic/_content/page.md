@@ -3,7 +3,7 @@ _fieldset: default
 title: Home
 meta_title: SEO Title Used By Google
 meta_desc: "This is the page description which displays in Google's search results, it is important for SEO."
-alt_title: The Statarkers Theme
+alt_title: This is a meta heading
 slideshow_slides:
   - 
     type: slide
@@ -123,6 +123,7 @@ focus:
     focus_body: Veritatis et quasi architecto beatae vitae dicta sunt explicabo
     focus_icon: icon-trophy
 ---
+
 
 
 

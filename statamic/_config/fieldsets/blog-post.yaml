@@ -70,7 +70,7 @@ fields:
               - left
               - right
       separator:
-        display: Section separiting line and spacing
+        display: Section separating line and spacing
   tags:
     display: Tags
     type: suggest
